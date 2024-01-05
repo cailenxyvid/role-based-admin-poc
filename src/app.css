@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/***************************** app global *********/
+button {
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.hideUntilHoverParent {
+    display: inline-block;
+}
+
+.hideUntilHoverParent .hideUntilHover {
+    display: none;    
+}
+
+.hideUntilHoverParent:hover .hideUntilHover {
+    display: inline-block;
+}
+
+/* used for toggle style behavior, ie for inline edit fields */
+.hideUntilHoverParent .hideOnHover {    
+    display: inline-block;
+}
+
+.hideUntilHoverParent:hover .hideOnHover {
+    display: none;
+}
+
+.tabs {
+    border: 1px solid #333;
+    border-bottom: none;
+}
+
+.tabs .tab {
+    border: none;
+    border-right: 1px solid #333;
+    background-color: #eee;
+}
+
+.tabs .tab.active {
+    background-color: #666;
+}
+
+/***************************** SIDEBAR SHARED COMPONENT (move to import lib) *****/
+.sidebarCollapsed .hideOnCollapse {
+    display: none;    
+}
+
+.hideOnExpand {
+    display: none;
+}
+
+.sidebarCollapsed .hideOnExpand {
+    display: inline;
+}
+
+.sidebarItem.active {
+    background-color: white;
+    color: #333;
+    padding-left: 10px;
+}
+
+
+/*********************** TICKET LIST ******/
+.ticketList input {
+    width: 9rem;    
+}
+.ticketList .title {        
+    width: 13rem;    
+}
+
+.ticketList th, .ticketList td {
+    padding-right: 1em;
+}
+
+
+/* having issues with tailwind-cli, trying native */
+#ContentItems {
+    overflow-y: auto;
+    
+    max-height: 25em;
+    min-width: 5em;
+}
+
+#AudienceChat, #SupportChat {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    height: 60vh;
+    width: 30vw;
+    min-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #333;
+    border-bottom: none;
+    padding: 5px;
+    margin-bottom: 3px;    
+}
+
+.messagePane {
+    overflow-y: auto;
+}
+
+.messagePane .message {
+    border: 1px solid #333;
+    background-color: rgb(187, 216, 216);
+    border-radius: 10px;
+    width: 50%;
+    padding: 5px;
+}
+
+.messagePane .message .messageUser {
+    font-size: smaller;
+    color: #666;
+}
+
+.messagePane .message.myMessage {
+    background-color: rgb(145, 165, 151);
+    margin-left: 50%;
+}
+
+.newMessage {
+    display: flex;
+    justify-content: right;
+}
+
+.newMessage form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.newMessage .fa-send {        
+    flex-shrink: 1;
+    padding:10px;
+}
+.messageInput {    
+    flex-grow: 1;        
+}
+
